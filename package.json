@@ -2,8 +2,11 @@
   "name": "playwright-cucumber-ts",
   "version": "1.0.0",
   "scripts": {
-    "test": "cucumber-js --require-module ts-node/register --require ./steps/**/*.ts --publish-quiet",
-    "test:playwright": "npx playwright test"
+    "test:bdd": "cucumber-js \"tests/features/**/*.feature\" --require-module ts-node/register --require \"tests/steps/**/*.ts\" --require \"tests/support/**/*.ts\" --format progress",
+    "test:ui": "playwright test --ui",
+    "test:pw": "playwright test",
+    "lint": "eslint . --ext .ts",
+    "format": "prettier . --write"
   },
   "devDependencies": {
     "@cucumber/cucumber": "^10.0.0",

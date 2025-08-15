@@ -1,0 +1,7 @@
+{
+  "cucumberautocomplete.steps": ["tests/steps/**/*.ts"],
+  "cucumberautocomplete.syncfeatures": "tests/features/**/*.feature",
+  "cucumberautocomplete.strictGherkinCompletion": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[typescript]": { "editor.defaultFormatter": "esbenp.prettier-vscode" }
+}
