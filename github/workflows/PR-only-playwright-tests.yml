@@ -1,5 +1,8 @@
 name: pull_request-tests
-on: [pull_request]
+on:
+  push:
+    branches:
+      - '**'
 jobs:
   pw:
     runs-on: ubuntu-latest
