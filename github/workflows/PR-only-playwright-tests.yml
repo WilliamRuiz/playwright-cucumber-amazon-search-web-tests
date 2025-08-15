@@ -1,0 +1,14 @@
+name: pull_request-tests
+on: [pull_request]
+jobs:
+  pw:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 20 }
+      - run: npm ci
+      - run: npx playwright install --with-deps
+      - run: npm run test:pw
+      - uses: actions/upload-artifact@v4
+        with: { name: pw-report, path: playwright-report }
