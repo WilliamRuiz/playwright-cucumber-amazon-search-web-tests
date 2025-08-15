@@ -1,12 +1,11 @@
-import { setDefaultTimeout } from "@cucumber/cucumber";
-
-module.exports = {
-    default: {
-      require: ["./tests/steps/*.ts", "./tests/support/*.ts"],
-      publishQuiet: true,
-      format: ["progress", "html:cucumber-report.html"],
-      paths: ["./tests/features/*.feature"],
-      requireModule: ["ts-node/register"],
-      timeout: 50000
-    }
-  };  
+export default {
+  default: {
+    requireModule: ['ts-node/register'],
+    require: ['tests/steps/**/*.ts', 'tests/support/**/*.ts'],
+    publishQuiet: true, // opcional, versões novas aceitam via config; se der erro, remova.
+    format: ['progress', 'json:reports/cucumber-report.json'],
+    tags: 'not @wip',
+    parallel: 2,
+    worldParameters: { baseURL: 'https://www.amazon.com.br' }
+  }
+}; 

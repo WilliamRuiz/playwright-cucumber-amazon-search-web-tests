@@ -3,9 +3,8 @@
         "target": "ESNext",
         "module": "CommonJS",
         "strict": true,
-        "esModuleInterop": true,
         "moduleResolution": "node",
-        "resolveJsonModule": true,
+        "esModuleInterop": true,
         "outDir": "dist",
         "types": [
             "node",
@@ -13,8 +12,12 @@
         ]
     },
     "include": [
-        "steps/**/*.ts",
-        "features/**/*.ts",
-        "playwright.config.ts"
+        "tests/**/*.ts",
+        "playwright.config.ts",
+        "cucumber.js"
+    ],
+    "exclude": [
+        "dist",
+        "node_modules"
     ]
 }
